@@ -1,0 +1,193 @@
+.feature-buttons {
+	display: flex;
+	justify-content: center;
+	gap: 32px;
+	margin-bottom: 80px;
+}
+
+.feature-btn {
+	font-size: 1.5em;
+	padding: 22px 38px;
+	border: none;
+	border-radius: 40px;
+	background: #222;
+	color: #fff;
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	cursor: pointer;
+	transition: background 0.2s, color 0.2s, transform 0.2s;
+	box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+	outline: none;
+}
+.feature-btn:hover, .feature-btn:focus {
+	background: #fff;
+	color: #222;
+	transform: scale(1.08);
+	box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+}
+.core-features-title {
+	width: 100%;
+	text-align: center;
+	font-size: 3em;
+	font-family: Arial, Helvetica, sans-serif;
+	color: #111;
+	font-weight: bold;
+	margin: 100px 0 40px 0;
+	letter-spacing: 1px;
+}
+.personas {
+	margin: 60px auto 0 auto;
+	max-width: 900px;
+	text-align: center;
+	font-size: 2.2em;
+	font-family: Arial, Helvetica, sans-serif;
+	color: #111;
+	font-weight: bold;
+	line-height: 1.3;
+}
+.personas span {
+	font-weight: normal;
+	color: #333;
+}
+.between-text {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 4em;
+	font-family: Arial, Helvetica, sans-serif;
+	color: #222;
+	font-weight: bold;
+	margin: 0 32px;
+	text-align: center;
+	min-width: 180px;
+	max-width: 420px;
+	word-break: break-word;
+}
+html, body {
+	height: 100%;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+/* Photo section styles */
+.photo-section {
+	display: flex;
+	flex-direction: row;
+	align-items: flex-start;
+	justify-content: space-between;
+	margin-top: 140px;
+	margin-left: 40px;
+	margin-right: 40px;
+}
+
+.main-cuff {
+	width: 320px;
+	max-width: 32vw;
+	height: auto;
+	margin-bottom: 30px;
+	border-radius: 18px;
+	box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+	background: #222;
+}
+
+.right-cuff {
+	align-self: flex-start;
+}
+
+.side-cuffs {
+	display: flex;
+	flex-direction: column;
+	gap: 24px;
+}
+
+.side-cuff {
+	width: 220px;
+	max-width: 80vw;
+	height: auto;
+	border-radius: 12px;
+	box-shadow: 0 2px 12px rgba(0,0,0,0.12);
+	background: #222;
+}
+.fancy-line {
+	width: 180px;
+	height: 12px;
+	margin: 18px auto 18px auto;
+	background: none;
+	border: none;
+	position: relative;
+}
+
+.fancy-line::before, .fancy-line::after {
+	content: '';
+	display: block;
+	position: absolute;
+	top: 50%;
+	width: 80px;
+	height: 2px;
+	background: linear-gradient(90deg, transparent, #fff 60%, transparent);
+	border-radius: 2px;
+}
+.fancy-line::before {
+	left: 0;
+	transform: rotate(-3deg);
+}
+.fancy-line::after {
+	right: 0;
+	transform: rotate(3deg);
+}
+/* Black half circle at the top */
+.half-circle {
+	width: 100vw;
+	min-width: 100vw;
+	height: 180px;
+	background: black;
+	border-bottom-left-radius: 100vw 180px;
+	border-bottom-right-radius: 100vw 180px;
+	position: relative;
+	top: 0;
+	left: 0;
+	right: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 1;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.circle-text {
+	width: 100%;
+	text-align: center;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Great+Vibes&display=swap');
+
+header {
+	font-size: 3em;
+	font-family: 'Playfair Display', 'Great Vibes', cursive, serif;
+	font-weight: bold;
+	color: white;
+	margin-bottom: 0.2em;
+}
+
+.subtitle {
+	font-size: 1.5em;
+	font-family: 'Great Vibes', 'Playfair Display', cursive, serif;
+	color: white;
+}
+
+header {
+	font-size: 3em;
+	font-weight: bold;
+}
