@@ -3,6 +3,20 @@
 </head>
 </head>
 <body>
+	<button class="preorder-btn" onclick="addToCart()">Pre-Order</button>
+	<script>
+	function addToCart() {
+		// Add a bracelet to the cart in localStorage
+		let cart = JSON.parse(localStorage.getItem('cart')) || [];
+		cart.push({ name: 'Aura Cuff - Lunar Black', price: 499 });
+		localStorage.setItem('cart', JSON.stringify(cart));
+		alert('Aura Cuff - Lunar Black added to your cart!');
+	}
+	</script>
+	<button class="cart-btn" onclick="window.location.replace('cart.html')">
+		View Cart
+		<span id="cart-count" class="cart-count-badge" style="display:none;">0</span>
+	</button>
 	<div class="half-circle">
 		<div class="circle-text">
 			<div class="fancy-line"></div>
@@ -10,9 +24,33 @@
 			<div class="fancy-line"></div>
 		</div>
 	</div>
+	<script>
+	function updateCartCount() {
+		let cart = JSON.parse(localStorage.getItem('cart')) || [];
+		let count = cart.length;
+		let badge = document.getElementById('cart-count');
+		if (badge) {
+			if (count > 0) {
+				badge.style.display = 'inline-block';
+				badge.textContent = count;
+			} else {
+				badge.style.display = 'none';
+			}
+		}
+	}
+	function addToCart() {
+		// Add a bracelet to the cart in localStorage
+		let cart = JSON.parse(localStorage.getItem('cart')) || [];
+		cart.push({ name: 'Aura Cuff - Lunar Black', price: 499 });
+		localStorage.setItem('cart', JSON.stringify(cart));
+		updateCartCount();
+		alert('Aura Cuff - Lunar Black added to your cart!');
+	}
+	window.onload = updateCartCount;
+	</script>
 	<div class="photo-section">
 		<div class="side-cuffs">
-			<img src=".vscode/photos/code/photos/auraangle.png" alt="AURA Cuff Angle" class="main-cuff">
+			<img src="auraangle.png" alt="AURA Cuff Angle" class="main-cuff">
 		</div>
 		<div class="between-text">
 			a new way to express yourself
@@ -24,13 +62,62 @@
 		<div>The Digital Creative: <span>Values tools for self-expression and design.</span></div>
 		<div>The Affluent Minimalist: <span>Appreciates subtle, high-quality, innovative products.</span></div>
 	</div>
-	<div class="core-features-title">
+	<div class="core-features-title fancy-title">
 		Core Features & Specifications
 	</div>
 	<div class="feature-buttons">
-		<button class="feature-btn">Hardware</button>
-		<button class="feature-btn">Software</button>
-		<button class="feature-btn">Pricing & Go-to-Market</button>
-		<button class="feature-btn">Viral Marketing Hook</button>
+	<button class="feature-btn" onclick="scrollAndBlur('hardware-info', this)">Hardware</button>
+	<button class="feature-btn" onclick="scrollAndBlur('software-info', this)">Software</button>
+	<button class="feature-btn" onclick="scrollAndBlur('pricing-info', this)">Pricing & Go-to-Market</button>
+	<button class="feature-btn" onclick="scrollAndBlur('viral-info', this)">Viral Marketing Hook</button>
+	<div class="feature-info-section" id="howto-info">
+		<h2>How to Use</h2>
+		<ul>
+			<li>Power on your Aura Cuff by pressing the side button.</li>
+			<li>Connect to the Aura App via Bluetooth for setup and customization.</li>
+			<li>Browse or create designs in the Studio, or select from the Gallery.</li>
+			<li>Sync your cuff with friends or set your daily look.</li>
+			<li>Charge easily with the magnetic pluck when needed.</li>
+		</ul>
+	</div>
+	</div>
+	<script>
+	function scrollAndBlur(id, btn) {
+		document.getElementById(id).scrollIntoView({behavior: 'smooth'});
+		setTimeout(function() { btn.blur(); }, 300);
+	}
+	</script>
+
+	<div class="feature-info-section" id="hardware-info">
+		<h2>Hardware</h2>
+		<ul>
+			<li>Flexible 360° high-resolution grayscale E-ink display.</li>
+			<li>Chassis made of aerospace-grade aluminum and hypoallergenic ceramic.</li>
+			<li>7-day battery life (dynamic mode), 21+ days (static mode)</li>
+			<li>Seamless magnetic charging pluck.</li>
+		</ul>
+	</div>
+	<div class="feature-info-section" id="software-info">
+		<h2>Software</h2>
+		<ul>
+			<li><b>Studio:</b> Design and upload custom patterns</li>
+			<li><b>Gallery:</b> A marketplace for exclusive designs from artists and brands</li>
+			<li><b>Social sync:</b> Match patterns with friends' cuffs in real-time</li>
+		</ul>
+	</div>
+	<div class="feature-info-section" id="pricing-info">
+		<h2>Pricing & Go-to-Market</h2>
+		<ul>
+			<li><b>Core Collection:</b> $499 USD<br><span style='font-weight:normal'>- Finishes: Lunar Black, Starlight Silver.</span></li>
+			<li><b>Limited Edition Drops:</b> $699+ USD<br><span style='font-weight:normal'>- Artist and brand collaborations to create hype and collectibility.</span></li>
+			<li><b>Digital "Art Drops":</b> $1.99 - $9.99<br><span style='font-weight:normal'>- Micro-transactions for exclusive patterns within the AURA App Gallery</span></li>
+		</ul>
+	</div>
+	<div class="feature-info-section" id="viral-info">
+		<h2>Viral Marketing Hook</h2>
+		<ul>
+			<li><b>The Hashtag:</b> #AuraCheck<br><span style='font-weight:normal'>- Encourage users to post videos and photos of their cuff's design of the day, their custom creations, and synced patterns with friends</span></li>
+			<li>The core marketing strategy is user-generated content, turning customers into organic, visual brand ambassadors on TikTok and Instagram</li>
+		</ul>
 	</div>
 </body>
